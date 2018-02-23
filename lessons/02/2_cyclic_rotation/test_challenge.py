@@ -6,6 +6,7 @@ def test_challenge_array():
     assert solution([0, 0, 0], 1) == [0, 0, 0]
     assert solution([1, 2, 3, 4], 4) == [1, 2, 3, 4]
     assert solution([1, 2, 3, 4], 0) == [1, 2, 3, 4]
+    assert solution([5, -1000], 1) == [-1000, 5]
 
 
 # Benchmark
