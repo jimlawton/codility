@@ -42,15 +42,15 @@ WEST = 1
 def solution(A):
     N = len(A)
     pairs = 0
-    for i in range(N):
+    numwest = 0
+    for i in range(N-1, -1, -1):
         # print("i=%d A[i]=%d" % (i, A[i]))
         if A[i] == WEST:
+            numwest += 1
             continue
         # Eastbound car.
-        for j in range(i, N):
-            # print("j=%d A[j]=%d" % (j, A[j]))
-            if A[j] == WEST:
-                pairs += 1
-            if pairs > 1000000000:
-                return -1
+        # print("j=%d A[j]=%d" % (j, A[j]))
+        pairs += numwest
+        if pairs > 1000000000:
+            return -1
     return pairs
