@@ -27,7 +27,7 @@ def solution(A):
             return 1
     for k in range(N):
         count[A[k]] += 1
-        print(count)
+        # print(count)
     for i in range(1, len(count)):
         if count[i] == 0:
             return i
