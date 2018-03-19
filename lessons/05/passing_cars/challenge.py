@@ -35,7 +35,22 @@
 #  * expected worst-case space complexity is O(1), beyond input storage
 #    (not counting the storage required for input arguments).
 
+EAST = 0
+WEST = 1
+
 
 def solution(A):
     N = len(A)
-    return 0
+    pairs = 0
+    for i in range(N):
+        # print("i=%d A[i]=%d" % (i, A[i]))
+        if A[i] == WEST:
+            continue
+        # Eastbound car.
+        for j in range(i, N):
+            # print("j=%d A[j]=%d" % (j, A[j]))
+            if A[j] == WEST:
+                pairs += 1
+            if pairs > 1000000000:
+                return -1
+    return pairs
