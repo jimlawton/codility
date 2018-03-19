@@ -57,12 +57,7 @@
 #  * expected worst-case space complexity is O(N), beyond input storage (not
 #    counting the storage required for input arguments).
 
-IMPACTS = {
-    'A': 1,
-    'C': 2,
-    'G': 3,
-    'T': 4
-}
+IMPACTS = {'A': 1, 'C': 2, 'G': 3, 'T': 4}
 
 
 def solution(S, P, Q):
