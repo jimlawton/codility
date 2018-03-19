@@ -1,9 +1,9 @@
 # A non-empty zero-indexed array A consisting of N integers is given. A pair
-# of integers (P, Q), such that 0 ≤ P < Q < N, is called a slice of array A
+# of integers (P, Q), such that 0 <= P < Q < N, is called a slice of array A
 # (notice that the slice contains at least two elements). The average of a
 # slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q] divided by the
 # length of the slice. To be precise, the average equals
-# (A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1).
+# (A[P] + A[P + 1] + ... + A[Q]) / (Q - P + 1).
 #
 # For example, array A such that:
 #     A = [4, 2, 2, 5, 1, 5, 8]
@@ -27,7 +27,7 @@
 #
 # Assume that:
 #  * N is an integer within the range [2..100,000];
-#  * each element of array A is an integer within the range [−10,000..10,000].
+#  * each element of array A is an integer within the range [-10,000..10,000].
 #
 # Complexity:
 #  * expected worst-case time complexity is O(N);
