@@ -65,6 +65,11 @@ def solution(S, P, Q):
     g = [0] * N
     t = [0] * N
     for i in range(N):
+        if i > 0:
+            a[i] = a[i-1]
+            c[i] = c[i-1]
+            g[i] = g[i-1]
+            t[i] = t[i-1]
         if S[i] == 'A':
             a[i] = i
         elif S[i] == 'C':
