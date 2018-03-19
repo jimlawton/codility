@@ -31,4 +31,4 @@ def solution(A):
     for i in range(1, len(count)):
         if count[i] == 0:
             return i
-    return 0
+    return len(count)
