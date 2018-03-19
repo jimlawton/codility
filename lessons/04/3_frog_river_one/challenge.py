@@ -46,19 +46,16 @@ def solution(X, A):
     N = len(A)
     if N < X:
         return -1
-    leaves = {}
-    for i in range(1, X+1):
-        if A.count(i) == 0:
-            # print("Count of %d is 0!" % i)
-            return -1
-        leaves[i] = 0
+    leaves = [0] * X
+    covered = 0
     # print("leaves: %s" % (leaves))
-    for i, v in enumerate(A):
-        # print("A[%d]: %d" % (i, v))
-        if v <= X+1:
-            leaves[v] = 1
+    for i in range(0, N):
+        if A[i] > X:
+            continue
+        if leaves[A[i]-1] == 0:
+            leaves[A[i]-1] = 1
+            covered += 1
         # print("leaves: %s" % (leaves))
-        # print(list(leaves.keys()))
-        if 0 not in list(leaves.values()):
+        if covered == X:
             return i
-    return 0
+    return -1
