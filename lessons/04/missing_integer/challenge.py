@@ -21,10 +21,10 @@
 
 def solution(A):
     N = len(A)
-    count = [0] * (N + 1)
     if N == 1:
         if A[0] > 1:
             return 1
+    count = [0] * (N + 1)
     for k in range(N):
         count[A[k]] += 1
         # print(count)
