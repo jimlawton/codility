@@ -28,6 +28,8 @@
 def solution(A):
     N = len(A)
     # print(N)
+    if N == 0:
+        return 1
     lo_total = sum(A)
     # print(lo_total)
     hi_total = sum(range(1, N+2))
