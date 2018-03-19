@@ -1,7 +1,12 @@
 
 def solution(A, K):
-    if K == 0 or K == len(A): 
+    if len(A) == 0 or K == 0 or K == len(A):
         return A
     if K == 1:
         return A[1:] + [A[0]]
-    return A[K-1:] + A[:K-1]
+    K = K % len(A)
+    # for i in range(K):
+    #     A = [A[-1]] + A[:-1]
+    #     print("%d: %s" % (i, A))
+    A = A[-K:] + A[:-K]
+    return A
