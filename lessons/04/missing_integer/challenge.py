@@ -25,11 +25,18 @@ def solution(A):
     if N == 1:
         if A[0] > 1:
             return 1
-    count = [0] * (N + 1)
+    poscount = [0] * 1000001
+    negcount = [0] * 1000001
     for k in range(N):
-        count[A[k]] += 1
-        # print(count)
-    for i in range(1, len(count)):
-        if count[i] == 0:
+        # print(A[k])
+        if A[k] >= 0:
+            poscount[A[k]] += 1
+        else:
+            negcount[-A[k]] += 1
+        # print(poscount, negcount)
+    if sum(poscount) == 0:
+        return 1
+    for i in range(1, len(poscount)):
+        if poscount[i] == 0:
             return i
-    return len(count)
+    return len(poscount)
