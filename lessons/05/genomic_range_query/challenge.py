@@ -60,10 +60,10 @@
 
 def solution(S, P, Q):
     N = len(S)
-    a = [0] * N
-    c = [0] * N
-    g = [0] * N
-    t = [0] * N
+    a = [-1] * N
+    c = [-1] * N
+    g = [-1] * N
+    t = [-1] * N
     for i in range(N):
         if i > 0:
             a[i] = a[i-1]
@@ -72,24 +72,23 @@ def solution(S, P, Q):
             t[i] = t[i-1]
         if S[i] == 'A':
             a[i] = i
-        elif S[i] == 'C':
+        if S[i] == 'C':
             c[i] = i
-        elif S[i] == 'G':
+        if S[i] == 'G':
             g[i] = i
-        elif S[i] == 'T':
+        if S[i] == 'T':
             t[i] = i
     M = len(P)
-    results = []
+    results = [0] * M
     for k in range(M):
         start = P[k]
         end = Q[k]
         if a[end] >= start:
-            minimpact = 1
+            results[k] = 1
         elif c[end] >= start:
-            minimpact = 2
+            results[k] = 2
         elif g[end] >= start:
-            minimpact = 3
+            results[k] = 3
         elif t[end] >= start:
-            minimpact = 4
-        results.append(minimpact)
+            results[k] = 4
     return results
