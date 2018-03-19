@@ -19,6 +19,7 @@
 #  * expected worst-case space complexity is O(N), beyond input storage
 #    (not counting the storage required for input arguments).
 
+
 def solution(A):
     N = len(A)
     if N == 1:
