@@ -57,6 +57,23 @@
 #  * expected worst-case space complexity is O(N), beyond input storage (not
 #    counting the storage required for input arguments).
 
+IMPACTS = {
+    'A': 1,
+    'C': 2,
+    'G': 3,
+    'T': 4
+}
+
 
 def solution(S, P, Q):
-    return []
+    impacts = []
+    for nucleo in S:
+        impacts.append(IMPACTS[nucleo])
+    M = len(P)
+    results = []
+    for k in range(M):
+        start = P[k]
+        end = Q[k]
+        minimpact = min(impacts[start:end+1])
+        results.append(minimpact)
+    return results
