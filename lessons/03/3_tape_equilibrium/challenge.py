@@ -49,20 +49,19 @@
 
 def solution(A):
     N = len(A)
-    if N == 2:
-        return abs(A[0] - A[1])
-    mindiff = -1
     left = A[0]
     right = sum(A[1:])
     # print("left=%d right=%d" % (left, right))
-    for P in range(1, N):
-        # print(P)
+    mindiff = abs(left - right)
+    # print("diff=%d" % (mindiff))
+    for P in range(1, N-1):
+        print(P)
         left += A[P]
         right -= A[P]
         # print("left=%d right=%d" % (left, right))
         diff = abs(left - right)
         # print("diff=%d" % (diff))
-        if mindiff == -1 or diff < mindiff:
+        if diff < mindiff:
             mindiff = diff
     # print("returning %d" % mindiff)
     return mindiff
