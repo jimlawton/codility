@@ -35,4 +35,22 @@
 
 
 def solution(A):
+    N = len(A)
+    if N == 1:
+        if A[0] == 1:
+            return 1
+        else:
+            return 0
+    count = {}
+    for i in range(N):
+        if A[i] not in count:
+            count[A[i]] = 0
+        count[A[i]] += 1
+        if count[A[i]] > 1:
+            return 0
+    # print(count)
+    values = count.keys()
+    # print(values)
+    if max(values) == N:
+        return 1
     return 0
