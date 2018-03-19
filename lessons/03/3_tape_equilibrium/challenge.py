@@ -55,7 +55,7 @@ def solution(A):
     mindiff = abs(left - right)
     # print("diff=%d" % (mindiff))
     for P in range(1, N-1):
-        print(P)
+        # print(P)
         left += A[P]
         right -= A[P]
         # print("left=%d right=%d" % (left, right))
