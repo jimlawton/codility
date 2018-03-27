@@ -1,8 +1,4 @@
 
-def solution(N):
-    # FIXME Add solution
-    return N
+def solution(A):
+    return 0N
 
-def solutionArray(A):
-    # FIXME Add solution
-    return A
