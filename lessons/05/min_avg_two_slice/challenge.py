@@ -35,5 +35,29 @@
 #    (not counting the storage required for input arguments).
 
 
+def prefix_sums(A):
+    n = len(A)
+    p = [0] * (n + 1)
+    for k in range(1, n+1):
+        p[k] = p[k-1] + A[k-1]
+    return p
+
+
+def suffix_sums(A):
+    n = len(A)
+    s = [0] * (n + 1)
+    for k in range(n, 0, -1):
+        s[k-1] = s[k] + A[k-1]
+    return s
+
+
+def count_total(p, x, y):
+    return p[y+1] - p[x]
+
+
 def solution(A):
+    p = prefix_sums(A)
+    print("prefix sums: %s" % p)
+    s = suffix_sums(A)
+    print("suffix sums: %s" % s)
     return 0
